@@ -8,11 +8,11 @@ const quotes = JSON.parse(fs.readFileSync('ba_quotes.json', 'utf8'));
 // Create an Express application
 const app = express();
 
-// Define a route that returns a random quote
-app.get('/random-quote', (req, res) => {
-    const randomIndex = Math.floor(Math.random() * quotes.length);
-    const randomQuote = quotes[randomIndex];
-    res.json(randomQuote);
+// First quote is source
+app.get('/', (req, res) => { 
+  const randomIndex = Math.floor(Math.random() * (quotes.length - 1)) + 1;
+  const randomQuote = quotes[randomIndex];
+  res.json(randomQuote);
 });
 
 // Start the server

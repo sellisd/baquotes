@@ -1,5 +1,10 @@
 {
+  "scripts": {
+    "build": "node app.js",
+    "start": "node app.js"
+  },
   "dependencies": {
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "vercel": "^33.7.0"
   }
 }
